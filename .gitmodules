@@ -1,0 +1,3 @@
+[submodule "vagrantism"]
+	path = vagrantism
+	url = git@github.com:DetroitSoftwareWorks/vagrantism.git
