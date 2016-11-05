@@ -1,0 +1,26 @@
+# http://qgis.org/debian
+- name: Set deb-bin
+  lineinfile: 
+    dest: /etc/apt/sources.list
+    state: present 
+#    regexp: '^#EDITOR=' 
+    line: 'deb  http://qgis.org/debian xenial main'
+  become: true
+- name: Set deb-src
+  lineinfile: 
+    dest: /etc/apt/sources.list
+    state: present 
+#    regexp: '^#EDITOR=' 
+    line: 'deb-src  http://qgis.org/debian xenial main'
+  become: true
+- name: update and upgrade all packages
+  apt: 
+    upgrade: safe 
+    update_cache: yes
+  become: true
+- name: ensure qgis is at the latest version
+  apt:
+    pkg: qgis
+    state: latest
+    allow_unauthenticated: yes
+  become: true

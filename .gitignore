@@ -1,0 +1,9 @@
+*/.vagrant/
+ansible/site.retry
+ansible/common
+ansible/git-client
+ansible/java-jdk
+ansible/java-jre
+ansible/node
+ansible/postfix
+ansible/swift
